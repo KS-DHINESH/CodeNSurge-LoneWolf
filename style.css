@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk&family=Poppins&display=swap');
 
 
-:root{
+body{
     --base: white;
     --base2: #eee;
     --text: #111;
@@ -10,7 +10,16 @@
     --b: teal;
     --c: springgreen;
 }
+body.dark{
+    --base: #111;
+    --base2: #222;
+    --text: white;
+    --text2: #EEE;
+    --a: mediumseagreen;
+    --b: teal;
+    --c: springgreen;
 
+}
 *{
     padding: 0;
     margin: 0;
@@ -20,6 +29,7 @@
     font-family: 'Poppins';
     background-color: var(--base);
     color: var(--text);
+    scroll-behavior: smooth;
 }
 
 nav {
@@ -241,3 +251,152 @@ main .s-con .card{
 
 .news-con .card:hover h4{
 display: none;}
+
+main .s-con .card{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: end;
+}
+main .s-con .card p{
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.news-con .card{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav #mob-menu{
+    display: none;
+}
+nav #mobile-theme{
+    display: none;
+}
+nav #nnnn{
+    display: none;
+}
+@media (max-width: 800px) {
+    nav #mob-menu{
+        display: block;
+    }
+    nav #mobile-theme{
+        display: block;
+    }   
+    nav ul{
+        display: none;
+    }
+    nav #nnnn{
+        display: flex;
+    }
+}
+
+.mobile{
+    display: flex;
+    flex-direction: column;
+}
+.mobile form{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+.mobile input{
+    height: 40px;
+    border: 1px solid var(--b);
+    padding: 10px;
+    border-radius: 20px;
+}
+.mobile input[type="text"]{
+    width: calc(75% - 20px);
+    margin: 10px;
+}
+.mobile input[type="submit"]{
+    width: calc(25% - 20px);
+    margin: 10px;
+    background-color: var(--c);
+}
+.mobile a{
+    padding: 15px 20px;
+    display: block;
+    border-bottom: 1px solid var(--a);
+}
+.mobile{
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.mobile.show{
+    max-height: 1000px;
+    opacity: 1;
+}
+
+
+@media (max-width: 900px) {
+    .news-con .card{
+        width: calc(33.33% - 20px);
+    }
+}
+@media (max-width: 600px) {
+    .news-con .card{
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 400px) {
+    .news-con .card{
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 850px) {
+    main{
+        flex-direction: column;
+    }    
+    main .con{
+        width: calc(100% - 20px);
+    }
+    main .s-con{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 250px;
+        margin-bottom: 40px;
+    }
+    main .s-con .card{
+        height: 250px;
+    }
+}
+
+@media (max-width: 550px) {
+    main .s-con{
+        flex-direction: column;
+        height: 650px;
+    }    
+}
+
+@media (max-width: 830px) {
+    .weather .con .card{
+        width: calc(33% - 20px);
+    }   
+}
+@media (max-width: 650px) {
+    .weather .con .card{
+        width: calc(50% - 20px);
+    }   
+}
+@media (max-width: 500px) {
+    .weather .con .card{
+        width: calc(100% - 20px);
+    }   
+}
+@media (max-width: 600px) {
+    .stock .card{
+        width: calc(100% - 20px);
+    }
+    .stock{
+        flex-wrap: wrap;
+    }
+}

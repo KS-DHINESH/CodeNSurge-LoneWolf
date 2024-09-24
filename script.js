@@ -41,6 +41,7 @@ fetch(req)
         s = article[num];
         document.getElementById('mainh').innerText = s.title;
         document.getElementById('mainp').innerText = s.description;
+        my = document.getElementById('maind').setAttribute('data', JSON.stringify(s));
         document.getElementById('maind').style.backgroundImage = 'url(' + s.urlToImage+')'; 
     })
 
@@ -73,7 +74,21 @@ fetch(req)
             p.innerText = datas.description;
             div.appendChild(p);
             div.style.backgroundImage = 'url('+datas.urlToImage+')';
+            div.setAttribute('data', JSON.stringify(datas));
+            div.onclick = function(){
+                detail(this);
+            }
             document.getElementById('trend').appendChild(div);
         }
     } 
 })
+
+
+function detail(element){
+    window.location.href = "detail.php?data=" + encodeURIComponent(element.getAttribute('data'));
+}
+
+
+function menu(){
+    document.getElementById('mobile').classList.toggle('show');
+}
