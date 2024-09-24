@@ -45,19 +45,19 @@ fetch(req)
     })
 
 
-var url2 = 'https://newsapi.org/v2/everything?' +
-    'q=tech&' +
-    'apiKey=b8572c5aaf164d3f8fc634e11cb9f0e1&pageSize=50';
+    var url = 'https://newsapi.org/v2/top-headlines?' +
+    'country=us&' +
+    'apiKey=b8572c5aaf164d3f8fc634e11cb9f0e1';
 
-var req2 = new Request(url2);
+    var req = new Request(url);
 
-fetch(req2)
-.then(function(response) {
-  return response.json();
-})
-.then(function(data){
-    article = data.articles;
-    for(i = 0;i< article.lenght;i++){
+    fetch(req)
+    .then(function(response) {
+        return response.json();
+    }).then(function(data){
+        console.log(data);
+        article = data.articles;
+        for(i = 0;i< article.length;i++){
         datas = article[i];
         console.log(datas);
         if(datas.title == "[Removed]"){
@@ -72,6 +72,7 @@ fetch(req2)
             p = document.createElement('p');
             p.innerText = datas.description;
             div.appendChild(p);
+            div.style.backgroundImage = 'url('+datas.urlToImage+')';
             document.getElementById('trend').appendChild(div);
         }
     } 

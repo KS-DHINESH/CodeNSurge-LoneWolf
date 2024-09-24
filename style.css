@@ -208,3 +208,36 @@ main .s-con .card{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.news-con{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.news-con .card{
+    width: calc(25% - 20px);
+    margin: 10px;
+    height: 250px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: end;
+}
+.news-con .card p{
+    max-height: 0px;
+    transition: max-height 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background: linear-gradient(to bottom, var(--base2), var(--b));
+}
+.news-con .card h4{
+    padding: 10px;
+}
+
+.news-con .card:hover p{
+    max-height: 1000px;
+    padding: 10px;
+}
+
+.news-con .card:hover h4{
+display: none;}
