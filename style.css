@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Poppins&display=swap');
+
+
+:root{
+    --base: white;
+    --base2: #eee;
+    --text: #111;
+    --text2: #222;
+    --a: mediumseagreen;
+    --b: teal;
+    --c: springgreen;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    background-color: var(--base);
+    color: var(--text);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  0 15px;
+    height: 70px;
+    border-bottom: 1px solid var(--base2);
+    box-shadow: 0px 1px 1px var(--base2);
+}
+nav h1{
+    font-family: 'honk';
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav ul a{
+    padding: 10px;
+    border-radius: 20px;
+}
+nav ul a:hover{
+    background-color: var(--a);
+}
+nav ul input{
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--b);
+    height: 40px;
+}
+
+main{
+    display: flex;
+    padding: 10px;
+}
+main .con{
+    width: calc(70% - 20px);
+    height: calc(100vh - 70px - 40px);
+    border-radius: 20px;
+    margin: 10px;
+    background: var(--base2);
+    display: flex;
+    align-items:start;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+main .con h2{
+    background: linear-gradient(to right, var(--a), transparent);
+    padding: 10px;
+}
+main .con p{
+    background: linear-gradient(to right, var(--b), transparent);
+    padding: 10px;
+    font-weight: bold;
+}
+main .s-con{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 20px - 70px);
+    width: calc(30% - 20px);
+}
+main .s-con .card{
+    width: 100%;
+    margin: 10px;
+    height: calc(33.33%);
+    background-color: var(--base2);
+    border-radius: 20px;
+}
+
+.weather{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, transparent, var(--a), transparent);
+    padding: 20px;
+}
+.weather .con p{
+    background: transparent;
+}
+.weather .con{
+    background-color: transparent;
+}
+.weather .card{
+    background: transparent;
+}
+.weather h2{
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, transparent, var(--b), transparent);
+}
+.weather .head{
+    display: flex;
+    align-items: center;
+    background: transparent;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.weather .head .headc{
+    display: flex;align-items: center; gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--c);
+}
+.weather .head span{
+    background-color: transparent;
+}
+.weather .head h3{
+    background-color: transparent;
+}
+.weather .con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.weather .con .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: calc(25% - 20px);
+    margin: 10px;
+    background: linear-gradient(to right, var(--b), var(--b), var(--b));
+    padding: 20px;
+    border-radius: 20px;
+}
+.weather .con .card p{
+    font-weight: bold;
+}
+.weather .con .card span{
+    background: transparent;
+}
+
+.stock{
+    display: flex;
+    padding: 10px;
+}
+.stock .card{
+    display: flex;
+    height: 250px;
+    flex-direction: column;
+    align-items: start;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    background-color: var(--base2);
+    justify-content: end;
+    border-radius: 20px;
+}
+.stock .card p{
+    background: linear-gradient(to right, gold, var(--base));
+    padding: 10px;
+}
+.stock .card h3{
+    background: linear-gradient(to right, silver, var(--base));
+    padding: 10px;
+}
+.stock .card:nth-child(1){
+    background-image: url(https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149166910.jpg);
+}
+.stock .card:nth-child(2){
+    background-image: url(https://img.freepik.com/free-photo/stock-market-chart-technology-blue-background_53876-124650.jpg)
+}
+.stock .card:nth-child(3){
+    background-image: url(https://png.pngtree.com/background/20230617/original/pngtree-upward-trending-stock-market-graph-in-3d-rendering-picture-image_3701625.jpg)
+}
+
+main .s-con .card:nth-child(1){
+    background-image: url(https://t3.ftcdn.net/jpg/08/64/77/56/360_F_864775625_A2SOce15nUA6BNP2TIXLgDJ6Scgv71a3.jpg);
+}
+main .s-con .card:nth-child(2){
+    background-image: url(https://wp-grsilvermining-2024.s3.ca-central-1.amazonaws.com/media/2023/06/silver2.jpeg);
+}
+
+main .s-con .card:nth-child(3){
+    background-image: url(https://png.pngtree.com/background/20231031/original/pngtree-3d-rendered-square-shaped-copper-ingots-picture-image_5820076.jpg);
+}
+main .s-con .card{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.stock .card{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
