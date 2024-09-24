@@ -43,3 +43,35 @@ fetch(req)
         document.getElementById('mainp').innerText = s.description;
         document.getElementById('maind').style.backgroundImage = 'url(' + s.urlToImage+')'; 
     })
+
+
+    var url2 = 'https://newsapi.org/v2/everything?' +
+    'q=tech&' +
+    'apiKey=b8572c5aaf164d3f8fc634e11cb9f0e1&pageSize=50';
+
+var req2 = new Request(url2);
+
+fetch(req2)
+.then(function(response) {
+  return response.json();
+})
+.then(function(data){
+    article = data.articles;
+    for(i = 0;i< article.lenght;i++){
+        datas = article[i];
+        if(datas.title == "[Removed]"){
+
+        }
+        else{
+            div = document.createElement('div');
+            div.classList.add('card');
+            h4 = document.createElement('h4');
+            h4.innerText = datas.title;
+            div.appendChild(h4);
+            p = document.createElement('p');
+            p.innerText = datas.description;
+            div.appendChild(p);
+            document.getElementById('trend').appendChild(div);
+        }
+    } 
+})
