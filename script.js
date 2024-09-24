@@ -45,7 +45,7 @@ fetch(req)
     })
 
 
-    var url2 = 'https://newsapi.org/v2/everything?' +
+var url2 = 'https://newsapi.org/v2/everything?' +
     'q=tech&' +
     'apiKey=b8572c5aaf164d3f8fc634e11cb9f0e1&pageSize=50';
 
@@ -59,6 +59,7 @@ fetch(req2)
     article = data.articles;
     for(i = 0;i< article.lenght;i++){
         datas = article[i];
+        console.log(datas);
         if(datas.title == "[Removed]"){
 
         }
