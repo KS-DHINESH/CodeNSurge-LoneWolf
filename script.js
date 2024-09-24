@@ -23,3 +23,23 @@ fetch(req)
         document.getElementById('temp').innerText = ''+data.current.temp_c;
         document.getElementById('no2').innerText = 'NO2 Qulaity in Air'+data.current.air_quality.no2;
     })
+
+
+    var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=us&' +
+          'apiKey=b8572c5aaf164d3f8fc634e11cb9f0e1&pageSize=10';
+
+var req = new Request(url);
+
+fetch(req)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data){
+        article = data.articles;
+        num = Math.floor(Math.random() * 10);
+        s = article[num];
+        document.getElementById('mainh').innerText = s.title;
+        document.getElementById('mainp').innerText = s.description;
+        document.getElementById('maind').style.backgroundImage = 'url(' + s.urlToImage+')'; 
+    })
